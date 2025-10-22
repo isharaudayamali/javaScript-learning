@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(x) {
+            var dis = document.getElementById("display");
+            dis.src = x.src;
+            x.style.border = "5px solid #f00";
+        }
+        function f2(x) { x.style.border = ""; }
+    </script>
+    <style> 
+        #img1 {
+            width: 400px;
+            border: 2px solid;
+            border-radius: 19px;
+        }
+
+        #display {
+            width: 1220px;
+            height: 800px;
+            display: block;
+            border: 2px black solid;
+            border-radius: 6px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <body>
+        <img src="Assets\img1.png" alt="img1" id="img1" onmouseout="f2(this)" onmouseover="f1(this)">
+        <img src="Assets\img2.png" alt="img2" id="img1" onmouseout="f2(this)" onmouseover="f1(this)">
+        <img src="Assets\img3.png" alt="img3" id="img1" onmouseout="f2(this)" onmouseover="f1(this)">
+        <img id="display" src="Assets\img2.png">
+    </body>
+</body>
+
+</html>
