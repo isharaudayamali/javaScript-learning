@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img1 {
+            width: 400px;
+            border: 2px solid;
+            border-radius: 6px;
+
+        }
+
+        #display {
+            width: 1220px;
+            height: 800px;
+            display: block;
+            border: 2px black solid;
+            border-radius: 6px;
+        }
+    </style>
+    <script>
+        //     function f1(x) {
+        //         var dis = document.getElementById("display");
+        //         dis.src = x;
+        //     }  
+
+        //
+        function f1(z) {
+            var x = document.getElementById("display");
+            x.src = z;
+        }
+    </script>
+</head>
+
+<body>
+    <img src="../Assets/img1.png" alt="img1" id="img1" onmouseover="f1(this.src)">
+    <img src="../Assets/img2.png" alt="img2" id="img1" onmouseover="f1(this.src)">
+    <img src="../Assets/img3.png" alt="img3" id="img1" onmouseover="f1(this.src)">
+    <img id="display" src="../Assets/img1.png">
+</body>
+
+</html>
