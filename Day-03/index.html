@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navbar</title>
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.4
+        }
+
+        /* Navbar container */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(90deg, #0f172a, #0b1220);
+            color: #fff;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.4px;
+        }
+
+        /* Links */
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.06)
+        }
+
+        /* Mobile hamburger */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 0;
+            color: #fff;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        /* Responsive: collapse into a menu for small screens */
+        @media (max-width:640px) {
+            .nav-links {
+                position: absolute;
+                top: 64px;
+                right: 0;
+                flex-direction: column;
+                background: #071022;
+                padding: 0.5rem;
+                border-radius: 6px;
+                display: none;
+                min-width: 150px
+            }
+
+            .nav-links.show {
+                display: flex
+            }
+
+            .nav-toggle {
+                display: block
+            }
+        }
+
+        /* Simple page content to show spacing */
+        main {
+            padding: 2rem
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="brand">MySite</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-controls="navLinks" aria-expanded="false"
+                aria-label="Toggle navigation">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome</h1>
+        <p>This page includes a simple responsive navigation bar. Resize the window to see the mobile toggle.</p>
+    </main>
+
+    <script>
+        // Minimal JS to toggle mobile menu
+        (function () {
+            const btn = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (!btn || !links) return;
+            btn.addEventListener('click', () => {
+                const showing = links.classList.toggle('show');
+                btn.setAttribute('aria-expanded', showing ? 'true' : 'false');
+            });
+        })();
+    </script>
+</body>
+
+</html>
